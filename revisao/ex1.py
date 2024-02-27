@@ -30,4 +30,4 @@ print("\nEle quer que o usuario informe dois conjuntos de 5 numeros e que ocorra
 print("""\nEu criei dois conjuntos vazios,pedi para o usuario informar números para os conjuntos e criei um ciclo do tamanho dos 
 conjuntos e pedi para efetuar a multiplicação escalar que é a multiplicação de cada item do conjunto e somar os seus multiplos """)
 
-print(""" \nNeste caso o método mais eficas a fazer é neste método pois ele economiza tempo e sua eficacia sempre será 100%, mas caso queira deixar com um menu bonito deve criar uma interface""")
+print(""" \nNeste caso o método mais eficas  seria por ambos, listas ou arrays, porém conjunto não deixara executar o programa""")

@@ -20,5 +20,5 @@ for i in range(10):
 
 print(f"O números do vetor são : {lista}")
 
-
+""
 
