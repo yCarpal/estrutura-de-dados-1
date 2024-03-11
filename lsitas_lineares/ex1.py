@@ -1,5 +1,5 @@
 def criar_lista():
-    # Pedindo ao usuário para inserir os números
+ 
     num_elementos = int(input("Quantos números você deseja adicionar à lista? "))
     lista = []
     for i in range(num_elementos):
@@ -8,9 +8,9 @@ def criar_lista():
     return lista
 
 def remover_elemento(lista):
-    # Pedindo ao usuário para inserir o elemento a ser removido
+   
     elemento = int(input("Insira o elemento que deseja remover: "))
-    # Verificando se o elemento está na lista antes de removê-lo
+  
     if elemento in lista:
         resposta = input(f"Tem certeza que deseja remover o elemento {elemento}? (s/n): ").lower()
         if resposta == 's':
@@ -25,7 +25,7 @@ def remover_elemento(lista):
         print("Elemento não encontrado na lista.")
 
 def consultar_elemento(lista):
-    # Pedindo ao usuário para inserir o elemento a ser consultado
+ 
     elemento = int(input("Insira o elemento que deseja consultar: "))
     # Verificando se o elemento está na lista
     if elemento in lista:
@@ -34,20 +34,20 @@ def consultar_elemento(lista):
         print(f"O elemento {elemento} não está na lista.")
 
 def tamanho_lista(lista):
-    # Determinando o tamanho da lista
+   
     tamanho = len(lista)
     print(f"O tamanho da lista é {tamanho}.")
 
 def inserir_elemento(lista):
-    # Pedindo ao usuário para inserir o elemento e a posição
+ 
     elemento = int(input("Insira o elemento que deseja inserir: "))
     posicao = int(input("Insira a posição onde deseja inserir o elemento: "))
-    # Inserindo o elemento na posição específica
+   
     lista.insert(posicao, elemento)
     print(f"Elemento {elemento} inserido na posição {posicao}.")
     print("Lista atualizada:", lista)
 
-# Função para exibir o menu
+
 def exibir_menu():
     print("\nMenu:")
     Traco("1. Criar lista")
@@ -57,13 +57,13 @@ def exibir_menu():
     Traco("5. Inserir elemento em posição específica")
     Traco("0. Sair")
 
-# Função para imprimir traços
+
 def Traco(txt):
     print('-'*30)
     print(txt)
     print('-'*30)
 
-# Criando a lista
+
 lista = []
 opcao = None
 
