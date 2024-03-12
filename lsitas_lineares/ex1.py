@@ -12,7 +12,7 @@ def remover_elemento(lista):
     elemento = int(input("Insira o elemento que deseja remover: "))
   
     if elemento in lista:
-        resposta = input(f"Tem certeza que deseja remover o elemento {elemento}? (s/n): ").lower()
+        resposta = input(f"Tem certeza que deseja remover o elemento {elemento}? (s/n): ")
         if resposta == 's':
             lista.remove(elemento)
             print("Elemento removido com sucesso.")
@@ -27,7 +27,7 @@ def remover_elemento(lista):
 def consultar_elemento(lista):
  
     elemento = int(input("Insira o elemento que deseja consultar: "))
-    # Verificando se o elemento está na lista
+   
     if elemento in lista:
         print(f"O elemento {elemento} está na lista.")
     else:
@@ -42,7 +42,7 @@ def inserir_elemento(lista):
  
     elemento = int(input("Insira o elemento que deseja inserir: "))
     posicao = int(input("Insira a posição onde deseja inserir o elemento: "))
-   
+    
     lista.insert(posicao, elemento)
     print(f"Elemento {elemento} inserido na posição {posicao}.")
     print("Lista atualizada:", lista)
@@ -55,7 +55,7 @@ def exibir_menu():
     Traco("3. Consultar elemento")
     Traco("4. Determinar tamanho da lista")
     Traco("5. Inserir elemento em posição específica")
-    Traco("0. Sair")
+    Traco("0. Sair e encerrar o programa")
 
 
 def Traco(txt):
