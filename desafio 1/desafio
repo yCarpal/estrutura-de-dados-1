@@ -1,31 +1,46 @@
-import numpy as np
-
 tam_array = 5
 array = [None] * tam_array
 re = 0
 frente = 0
+espaco = tam_array
 
-def inserir(elemento):
+
+def inserir(elemento): 
     global re, frente
+    
 
-    verificar_falso_overflow()
+    
+    espaco = 0
+    for i in range(tam_array):
+        if array[i] == None:
+            espaco = espaco +  1
 
-    if re == frente and array[re] != None:
-        print("Fila cheia = OVERFLOW")
-    else:
+        if espaco >= 2 and re == tam_array:
+            re = 0
+
+
+    if re + 1 == frente or (re == tam_array and espaco == 1): 
+        print(f'\n--> Falso Overflow! <--\n') 
+
+    elif re == tam_array: 
+            print(f'\nFila cheia, Overflow\n')
+
+
+    elif re + 1 != frente:
         array[re] = elemento
-        re = (re + 1) % tam_array
-
-    print(array)
+        re = re + 1
+    
+    print(f'\n{array} Ré:{re} frente:{frente}\n') 
 
 def remover():
-    global frente, re
+    global frente, re, espaco
 
     if frente == re and array[frente] == None:
-        print("Fila vazia, temos um -> UNDERFLOW")
+        print("UNDERFLOW, fila ja esta vazia!")
     else:
         array[frente] = None
         frente = (frente + 1) % tam_array
+        espaco += 1
 
     print(array)
 
@@ -43,19 +58,6 @@ def consultar_elemento(elemento):
 
     if not encontrado:
         print(f"Elemento {elemento} não encontrado na fila")
-
-def verificar_falso_overflow():
-    global re, frente, tam_array
-
-    if re + 1 == frente:
-        print("Falso Overflow!")
-        novo_array = [None] * (tam_array * 2)
-        for i in range(tam_array):
-            novo_array[i] = array[(frente + i) % tam_array]
-        array = novo_array
-        frente = 0
-        re = tam_array - 1
-        tam_array *= 2
 
 def Traco(msg):
     print("-" * 40)
@@ -75,7 +77,7 @@ while True:
     if opcao == 1:  
         elemento = int(input("Digite o elemento que quer adicionar: "))
         inserir(elemento)
-        verificar_falso_overflow()
+       
 
     elif opcao == 2:
         remover()
