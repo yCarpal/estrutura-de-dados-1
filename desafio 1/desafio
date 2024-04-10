@@ -7,9 +7,7 @@ espaco = tam_array
 
 def inserir(elemento): 
     global re, frente
-    
-
-    
+ 
     espaco = 0
     for i in range(tam_array):
         if array[i] == None:
@@ -17,7 +15,6 @@ def inserir(elemento):
 
         if espaco >= 2 and re == tam_array:
             re = 0
-
 
     if re + 1 == frente or (re == tam_array and espaco == 1): 
         print(f'\n--> Falso Overflow! <--\n') 
