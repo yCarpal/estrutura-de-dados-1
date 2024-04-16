@@ -116,3 +116,4 @@ while True:
         break
     else:
         print("\033[1;31mOpção inválida. Por favor, escolha uma opção válida.\033[0m")
+#A
