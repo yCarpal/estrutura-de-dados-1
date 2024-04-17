@@ -1,28 +1,28 @@
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n)-1:
-        for j in range(0, n-i-1):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
+def bubble_sort(lista):
+    n = len(lista)
+    for i in range(n - 1):
+        for j in range(0, n - i - 1):
+            if lista[j] > lista[j + 1]:
+                lista[j], lista[j + 1] = lista[j + 1], lista[j]
 
-def selection_sort(arr):
-    n = len(arr)
+def selection_sort(lista):
+    n = len(lista)
     for step in range(n):
-        min_idx = step
+        indice = step
         for j in range(step + 1, n):
-            if arr[j] < arr[min_idx]:
-                min_idx = j
-        arr[step], arr[min_idx] = arr[min_idx], arr[step]
+            if lista[j] < lista[indice]:
+                indice = j
+        lista[step], lista[indice] = lista[indice], lista[step]
 
-def insertion_sort(arr):
-    n = len(arr)
+def insertion_sort(lista):
+    n = len(lista)
     for i in range(1, n):
-        key = arr[i]
+        key = lista[i]
         j = i - 1
-        while j >= 0 and key < arr[j]:
-            arr[j + 1] = arr[j]
+        while j >= 0 and key < lista[j]:
+            lista[j + 1] = lista[j]
             j -= 1
-        arr[j + 1] = key
+        lista[j + 1] = key
 
 def print_menu():
     print("\033[1;33m╔══════════════════════════════╗")
@@ -58,23 +58,24 @@ def explain_insertion_sort():
     print("Em cada iteração, um elemento é removido da parte não ordenada e inserido na posição correta na parte ordenada.")
     print("Este processo é repetido até que não haja mais elementos na parte não ordenada.\n")
 
-arr = []
+lista = []
 while True:
     print_menu()
     choice = int(input("\033[1;36mEscolha uma opção: \033[0m"))
 
     if choice == 1:
         n = int(input("\nDigite o tamanho da lista: "))
-        arr = [int(input("Digite o elemento {}: ".format(i+1))) for i in range(n)]
+        lista = [int(input("Digite o elemento {}: ".format(i + 1))) for i in range(n)]
+        print("Lista criada:", lista)
     elif choice == 2:
-        bubble_sort(arr)
-        print("\nLista ordenada usando Bubble Sort:", arr)
+        bubble_sort(lista)
+        print("\nLista ordenada usando Bubble Sort:", lista)
     elif choice == 3:
-        selection_sort(arr)
-        print("\nLista ordenada usando Selection Sort:", arr)
+        selection_sort(lista)
+        print("\nLista ordenada usando Selection Sort:", lista)
     elif choice == 4:
-        insertion_sort(arr)
-        print("\nLista ordenada usando Insertion Sort:", arr)
+        insertion_sort(lista)
+        print("\nLista ordenada usando Insertion Sort:", lista)
     elif choice == 5:
         explain_bubble_sort()
     elif choice == 6:
