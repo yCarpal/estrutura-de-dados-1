@@ -66,23 +66,25 @@ def remover_fila():
 
 
 def print_menu():
-    print("\033[1;33m╔══════════════════════════════╗")
+    print("\033[1;33m╔════════════════════════════════════════╗")
     print("║          Escolha pilha ou fila         ║")
-    print("╠══════════════════════════════╣")
-    print("║ 1. Inserir elementos na fila ║")
-    print("║ 2. Inserir elementos na pilha  ║")
-    print("║ 3. Remover Elem Pilha     ║")
-    print("║ 4. Remover elem Fila    ║")
-    print("║ 5. Sair                 ║")
-    print("╚══════════════════════════════╝\033[0m")
+    print("╠════════════════════════════════════════╣")
+    print("║ 1. Inserir elementos na fila           ║")
+    print("║ 2. Inserir elementos na pilha          ║")
+    print("║ 3. Remover Elem Pilha                  ║")
+    print("║ 4. Remover elem Fila                   ║")
+    print("║ 5. Sair                                ║")
+    print("╚════════════════════════════════════════╝\033[0m")
 
 while True:
     print_menu()
     choice = int(input("\033[1;36mEscolha uma opção: \033[0m"))
 
     if choice == 1:
-        inserir_fila()
         print("Insira elementos para a fila")
+        elemento = (input("Digite o elemento que quer adicionar: "))
+        inserir_fila(elemento)
+        
     elif choice == 2:
         inserir_pilha()
         print("Insira elementos para a pilha")
